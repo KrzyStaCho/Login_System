@@ -1,5 +1,6 @@
 #include "DataValidate.h"
 #include <string>
+#include <unordered_map>
 using namespace std;
 
 bool DataValidate::isEmpty(const std::string& text) {
@@ -55,4 +56,9 @@ bool DataValidate::CheckMinMax(const int& number, const int& max, const int& min
 
 bool DataValidate::CheckMinMax(const float& number, const float& max, const float& min) {
     return number >= min && number <= max;
+}
+
+size_t DataValidate::Hash(const string& text) {
+    hash<string> hasher;
+    return hasher(text);
 }

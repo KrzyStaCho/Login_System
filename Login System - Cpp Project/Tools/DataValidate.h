@@ -18,6 +18,8 @@ public:
 
     static bool CheckMinMax(const int& number, const int& max, const int& min);
     static bool CheckMinMax(const float& number, const float& max, const float& min);
+
+    static size_t Hash(const std::string& text);
 };
 
 class DataValidateException : public std::exception {
