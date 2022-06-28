@@ -7,6 +7,7 @@ public:
     static unsigned CountLine(const std::string& path);
     static std::string GetLine(const std::string& path, unsigned numberOfLine);
     static std::string* GetAllLine(const std::string& path);
+    static unsigned FindLine(const std::string& path, const std::string& line);
     static void SaveLine(const std::string& path, const std::string& line, bool saveOldData = false, bool newLine = false);
     static void SaveArray(const std::string& path, const std::string tab[], unsigned n, bool saveOldData = false, bool newLIne = false);
 };

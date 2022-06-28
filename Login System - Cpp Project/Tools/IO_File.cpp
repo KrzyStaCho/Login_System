@@ -47,6 +47,22 @@ std::string* IO_File::GetAllLine(const string& path) {
     return lineTab;
 }
 
+unsigned IO_File::FindLine(const string& path, const string& line) {
+    string fileLine;
+    unsigned counter = 0;
+    ifstream mFile(path);
+
+    if (!mFile.is_open()) throw IO_FileException("IO_File: Couldnt open file");
+    while (mFile.peek() != EOF) {
+        getline(mFile, fileLine);
+        ++counter;
+
+        if (fileLine == line) break;
+    } mFile.close();
+
+    return fileLine == line ? counter : 0;
+}
+
 void IO_File::SaveLine(const string& path, const string& line, bool saveOldData, bool newLine) {
     ofstream mFile;
     
