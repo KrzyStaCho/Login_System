@@ -58,7 +58,10 @@ bool DataValidate::CheckMinMax(const float& number, const float& max, const floa
     return number >= min && number <= max;
 }
 
-size_t DataValidate::Hash(const string& text) {
-    hash<string> hasher;
-    return hasher(text);
+string DataValidate::Hash(const string& text) {
+    string str;
+    for (char character : text) {
+        str += (char)((int)character + 1);
+    }
+    return str;
 }
